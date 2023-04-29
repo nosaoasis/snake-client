@@ -14,6 +14,10 @@ const connect = function () {
     console.log("You received data: ", data)
   })
 
+  conn.on("connect", () => {
+    conn.write("Name: NOA")
+  })
+
   return conn;
 };
 
