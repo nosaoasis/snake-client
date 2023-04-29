@@ -16,23 +16,10 @@ const connect = function () {
 
   conn.on("connect", () => {
     conn.write("Name: NOA");
+  });
 
-    setTimeout(() => {
-      conn.write("Move: up");
-    }, 1000);
-    setTimeout(() => {
-      conn.write("Move: right");
-    }, 2000);
-    setTimeout(() => {
-      conn.write("Move: down");
-    }, 3000);
-    setTimeout(() => {
-      conn.write("Move: left");
-    }, 4000);
-
-    setInterval(() => {
-      conn.write("Move: up");
-    }, 5000);
+  conn.on("connect", () => {
+    conn.write("Say: Game on....");
   });
 
   return conn;
